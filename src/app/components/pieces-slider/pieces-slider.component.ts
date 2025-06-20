@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgIf, UpperCasePipe } from '@angular/common';
 import {
   Component,
   AfterViewInit,
@@ -12,13 +12,29 @@ declare const Pieces: any;
 @Component({
   selector: 'app-pieces-slider',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, UpperCasePipe],
   templateUrl: './pieces-slider.component.html',
   styleUrls: ['./pieces-slider.component.css'],
 })
 export class PiecesSliderComponent implements AfterViewInit, OnDestroy {
   @ViewChild('sliderCanvas', { static: false })
   sliderCanvas?: ElementRef<HTMLCanvasElement>;
+
+  descriptions = [
+    'Description for slide 1',
+    'this is my description for slide 2',
+    'dfd df dsf df sdfsdf gfg fgd',
+    'Description for slide 4',
+    'sdsa sdsad sadsadsadd dfdsf dsfds dsf',
+  ];
+
+  titles = [
+    'Ricardo Gomez Angel',
+    'GELA BARKALAIA',
+    'SPIRA RECORDS',
+    'Description for slide 4',
+    'SOME RANDOM RITLE',
+  ];
 
   imagesEl: HTMLImageElement[] = [];
   textEl: HTMLElement[] = [];
@@ -50,8 +66,12 @@ export class PiecesSliderComponent implements AfterViewInit, OnDestroy {
     if (!canvas) return console.error('Canvas not found');
 
     this.updateCanvasSize(canvas);
-    this.imagesEl = Array.from(document.querySelectorAll('.pieces-slider__image')) as HTMLImageElement[];
-    this.textEl = Array.from(document.querySelectorAll('.pieces-slider__text')) as HTMLElement[];
+    this.imagesEl = Array.from(
+      document.querySelectorAll('.pieces-slider__image')
+    ) as HTMLImageElement[];
+    this.textEl = Array.from(
+      document.querySelectorAll('.pieces-slider__text')
+    ) as HTMLElement[];
     this.slidesLength = this.imagesEl.length;
     this.imagesReady = 0;
     this.items = [];
@@ -82,7 +102,11 @@ export class PiecesSliderComponent implements AfterViewInit, OnDestroy {
     });
   }
 
-  getScaledImage(img: HTMLImageElement, targetWidth: number, targetHeight: number): HTMLImageElement {
+  getScaledImage(
+    img: HTMLImageElement,
+    targetWidth: number,
+    targetHeight: number
+  ): HTMLImageElement {
     const off = document.createElement('canvas');
     off.width = targetWidth;
     off.height = targetHeight;
@@ -149,7 +173,8 @@ export class PiecesSliderComponent implements AfterViewInit, OnDestroy {
 
   prevSlide(): void {
     this.hideItems(this.currentIndex);
-    this.currentIndex = (this.currentIndex - 1 + this.slidesLength) % this.slidesLength;
+    this.currentIndex =
+      (this.currentIndex - 1 + this.slidesLength) % this.slidesLength;
     this.showItems(this.currentIndex);
   }
 

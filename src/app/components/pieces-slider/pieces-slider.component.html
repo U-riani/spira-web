@@ -47,8 +47,8 @@
 
   <canvas
     #sliderCanvas
-    class="pieces-slider__canvas border-0 -mt-[2px] -ms-[2px]"
-    style="width: calc(100% + 4px); height: 100%"
+    class="pieces-slider__canvas border-0 -mt-[2px] -ms-[2px] bg-neutral-900"
+    style="width: calc(100% + 4px); height: calc(100% + 4px);"
   ></canvas>
   <button
     class="pieces-slider__button pieces-slider__button--prev"
@@ -86,8 +86,24 @@
   </button>
 
   <!-- Text overlay at bottom-left -->
-  <div class="pieces-slider__text-overlay" *ngIf="slidesLength > 0">
-    <h2 class="overlay-title">{{ textEl[currentIndex].textContent }}</h2>
-    <button class="overlay-button" (click)="onNavigate()">Go somewhere</button>
+  <div
+    class="pieces-slider__text-overlay absolute left-5 bottom-5 bg-[#00000099] p-4 md:p-6 md:bottom-7 md:left-7"
+    *ngIf="slidesLength > 0"
+  >
+    <h2
+      class="overlay-title inline font-bold text-white/90 text-lg tracking-wide bg-neutral-900"
+    >
+      {{ titles[currentIndex] | uppercase}}
+    </h2>
+    <p class="overlay-description pt-2 pb-4  text-neutral-200">
+      {{ descriptions[currentIndex] }}
+    </p>
+
+    <button
+      class=" border border-[#fff1da] text-[#fff1da] hover:bg-[#fff1da]/10 transition-all duration-300 px-4 py-2"
+      (click)="onNavigate()"
+    >
+      MORE INFO
+    </button>
   </div>
 </div>
