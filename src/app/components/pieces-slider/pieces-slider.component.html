@@ -1,0 +1,93 @@
+<div class="pieces-slider">
+  <div class="pieces-slider__slide hidden" style="width: 100%; height: 100%">
+    <img
+      class="pieces-slider__image"
+      src="assets/img/1.jpg"
+      style="width: 100%; height: 100%; object-fit: cover"
+      alt=""
+    />
+    <div class="pieces-slider__text">Ricardo Gomez Angel</div>
+  </div>
+  <div class="pieces-slider__slide hidden" style="width: 100%; height: 100%">
+    <img
+      class="pieces-slider__image"
+      src="assets/img/2.jpg"
+      style="width: 100%; height: 100%; object-fit: cover"
+      alt=""
+    />
+    <div class="pieces-slider__text">Josh Calabrese</div>
+  </div>
+  <div class="pieces-slider__slide hidden" style="width: 100%; height: 100%">
+    <img
+      class="pieces-slider__image"
+      src="assets/img/3.jpg"
+      style="width: 100%; height: 100%; object-fit: cover"
+      alt=""
+    />
+    <div class="pieces-slider__text">Samuel Zeller</div>
+  </div>
+  <div class="pieces-slider__slide hidden" style="width: 100%; height: 100%">
+    <img
+      class="pieces-slider__image"
+      src="assets/img/4.jpg"
+      style="width: 100%; height: 100%; object-fit: cover"
+      alt=""
+    />
+    <div class="pieces-slider__text">Sweet Ice Cream</div>
+  </div>
+  <div class="pieces-slider__slide hidden" style="width: 100%; height: 100%">
+    <img
+      class="pieces-slider__image"
+      src="assets/img/5.jpg"
+      style="width: 100%; height: 100%; object-fit: cover"
+      alt=""
+    />
+    <div class="pieces-slider__text">Sticker Mule</div>
+  </div>
+
+  <canvas
+    #sliderCanvas
+    class="pieces-slider__canvas border-0 -mt-[2px] -ms-[2px]"
+    style="width: calc(100% + 4px); height: 100%"
+  ></canvas>
+  <button
+    class="pieces-slider__button pieces-slider__button--prev"
+    aria-label="Previous slide"
+  >
+    <svg
+      width="40"
+      height="60"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      viewBox="0 0 24 48"
+    >
+      <polyline points="20 40 12 24 20 8"></polyline>
+    </svg>
+  </button>
+  <button
+    class="pieces-slider__button pieces-slider__button--next"
+    aria-label="Next slide"
+  >
+    <svg
+      width="40"
+      height="60"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      viewBox="0 0 24 48"
+    >
+      <polyline points="4 40 12 24 4 8"></polyline>
+    </svg>
+  </button>
+
+  <!-- Text overlay at bottom-left -->
+  <div class="pieces-slider__text-overlay" *ngIf="slidesLength > 0">
+    <h2 class="overlay-title">{{ textEl[currentIndex].textContent }}</h2>
+    <button class="overlay-button" (click)="onNavigate()">Go somewhere</button>
+  </div>
+</div>

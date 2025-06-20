@@ -1,0 +1,24 @@
+.carousel-container {
+  position: relative;
+}
+
+.pieces-slider__canvas {
+  width: 100%;
+  display: block;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.controls button {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}

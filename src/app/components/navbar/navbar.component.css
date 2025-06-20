@@ -1,0 +1,17 @@
+.burder-menu-button-top-close {
+  transform: rotate(0deg) translate(0, 0);
+  width: 1.5rem;
+}
+.burder-menu-button-top-open {
+  transform: rotate(45deg) translate(5px, 7px);
+  width: 1.6rem;
+}
+
+.burder-menu-button-bottom-close {
+  transform: rotate(0deg) translate(0, 0);
+  width: 1.5rem;
+}
+.burder-menu-button-bottom-open {
+  transform: rotate(-45deg) translate(5px, -8px);
+  width: 1.6rem;
+}

@@ -1,0 +1,22 @@
+<div class="flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <header class="fixed w-full z-50">
+    <app-navbar></app-navbar>
+  </header>
+
+  <!-- Content & Sidebar -->
+  <div class="flex flex-1 mt-16">
+    <!-- Sidebar/Menu -->
+    <!-- <app-sidebar class="w-64 bg-gray-100"></app-sidebar> -->
+
+    <!-- Main content -->
+    <main class="flex-1">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>
