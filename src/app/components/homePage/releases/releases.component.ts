@@ -6,10 +6,11 @@ import {
   AfterViewInit,
   HostListener,
 } from '@angular/core';
+import { SafeUrlPipePipe } from '../../../pipes/safeUrl/safe-url-pipe.pipe';
 
 @Component({
   selector: 'app-releases',
-  imports: [NgFor, NgClass],
+  imports: [NgFor, SafeUrlPipePipe],
   templateUrl: './releases.component.html',
   styleUrl: './releases.component.css',
 })
@@ -18,13 +19,62 @@ export class ReleasesComponent implements AfterViewInit {
   carouselItems!: ElementRef<HTMLDivElement>;
 
   items = [
-    { index: 1, color: 'bg-blue-500' },
-    { index: 2, color: 'bg-red-500' },
-    { index: 3, color: 'bg-green-500' },
-    { index: 4, color: 'bg-yellow-500' },
-    { index: 5, color: 'bg-green-500' },
-    { index: 6, color: 'bg-yellow-500' },
-    { index: 7, color: 'bg-green-500' },
+    {
+      index: 1,
+      color: 'bg-blue-500',
+      srcSmall:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/artwork=small/transparent=true/',
+      srcBig:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/transparent=true/',
+    },
+    {
+      index: 2,
+      color: 'bg-red-500',
+      srcSmall:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/artwork=small/transparent=true/',
+      srcBig:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/transparent=true/',
+    },
+    {
+      index: 3,
+      color: 'bg-green-500',
+      srcSmall:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/artwork=small/transparent=true/',
+      srcBig:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/transparent=true/',
+    },
+    {
+      index: 4,
+      color: 'bg-yellow-500',
+      srcSmall:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/artwork=small/transparent=true/',
+      srcBig:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/transparent=true/',
+    },
+    {
+      index: 5,
+      color: 'bg-green-500',
+      srcSmall:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/artwork=small/transparent=true/',
+      srcBig:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/transparent=true/',
+    },
+    {
+      index: 6,
+      color: 'bg-yellow-500',
+      srcSmall:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/artwork=small/transparent=true/',
+      srcBig:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/transparent=true/',
+    },
+    {
+      index: 7,
+      color: 'bg-green-500',
+      srcSmall:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/artwork=small/transparent=true/',
+      srcBig:
+        'https://bandcamp.com/EmbeddedPlayer/album=2802051173/size=large/bgcol=333333/linkcol=ffffff/transparent=true/',
+    },
   ];
 
   currentIndex = 0;
@@ -32,6 +82,21 @@ export class ReleasesComponent implements AfterViewInit {
   gapWidth = 20; // gap-5 = 20px
   screenWidth = window.innerWidth;
   VisibleItemsCunt = 0;
+
+  @HostListener('window:resize')
+  onResize() {
+    this.screenWidth = window.innerWidth;
+    this.calculateItemWidth();
+    this.updateVisibleItemsCount();
+  }
+
+  bandcampSrc(item: any): string {
+    const base = item.srcBig.slice(0,-17);
+    if (this.itemWidth >= 500) {
+      return `${base}artwork=small/transparent=true/`;
+    }
+    return `${base}transparent=true/`;
+  }
 
   ngAfterViewInit() {
     this.calculateItemWidth();
@@ -41,14 +106,22 @@ export class ReleasesComponent implements AfterViewInit {
       this.VisibleItemsCunt = 3;
     } else if (window.innerWidth >= 1280 && window.innerWidth < 1536) {
       this.VisibleItemsCunt = 4;
-    } else if (window.innerWidth > 1536) {
+    } else if (window.innerWidth >= 1536) {
       this.VisibleItemsCunt = 5;
-    } 
+    }
+    // this.updateVisibleItemsCount();
   }
 
-  @HostListener('window:resize')
-  onResize() {
-    this.calculateItemWidth();
+  updateVisibleItemsCount() {
+    if (window.innerWidth > 768 && window.innerWidth < 1024) {
+      this.VisibleItemsCunt = 2;
+    } else if (window.innerWidth >= 1024 && window.innerWidth < 1280) {
+      this.VisibleItemsCunt = 3;
+    } else if (window.innerWidth >= 1280 && window.innerWidth < 1536) {
+      this.VisibleItemsCunt = 4;
+    } else if (window.innerWidth >= 1536) {
+      this.VisibleItemsCunt = 5;
+    }
   }
 
   calculateItemWidth() {
@@ -78,6 +151,7 @@ export class ReleasesComponent implements AfterViewInit {
       left: scrollPosition,
       behavior: 'smooth',
     });
+
   }
 
   startX = 0;

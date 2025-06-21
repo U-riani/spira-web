@@ -1,0 +1,10 @@
+.showcase-place::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color:rgb(123, 129, 139);
+  position: absolute;
+  top: 10px;
+  margin-left: -12px;
+}
