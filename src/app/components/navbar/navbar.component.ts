@@ -1,9 +1,10 @@
 import { NgClass, NgIf } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgClass, NgIf],
+  imports: [NgClass, NgIf, RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })

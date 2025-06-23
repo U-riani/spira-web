@@ -1,0 +1,15 @@
+.csstransforms h3, .page-title h3 {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.dj-name:before {
+  content: '';
+  width: 13px;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%)
+}

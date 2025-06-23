@@ -121,7 +121,7 @@
       </li>
       <li>
         <a
-          routerLink="/services"
+          routerLink="/artists"
           routerLinkActive="text-blue-700"
           class="cursor-pointer hover:bg-[#fff1da]/10 dark:text-[#fff1da] pt-1 pb-2 px-3"
           >Artists</a
@@ -129,7 +129,7 @@
       </li>
       <li>
         <a
-          routerLink="/pricing"
+          routerLink="/releases"
           routerLinkActive="text-blue-700"
           class="cursor-pointer hover:bg-[#fff1da]/10 dark:text-[#fff1da] pt-1 pb-2 px-3"
           >Releases</a
@@ -137,7 +137,7 @@
       </li>
       <li>
         <a
-          routerLink="/contact"
+          routerLink="/podcast"
           routerLinkActive="text-blue-700"
           class="cursor-pointer hover:bg-[#fff1da]/10 dark:text-[#fff1da] pt-1 pb-2 px-3"
           >Podcasts</a
@@ -145,7 +145,7 @@
       </li>
       <li>
         <a
-          routerLink="/contact"
+          routerLink="/showcases"
           routerLinkActive="text-blue-700"
           class="cursor-pointer hover:bg-[#fff1da]/10 dark:text-[#fff1da] pt-1 pb-2 px-3"
           >Showcases</a
@@ -166,18 +166,18 @@
 
   <ul class="flex flex-col space-y-4 p-4 font-medium">
     <li>
-      <a routerLink="/" (click)="toggleMenu($event)" class="text-[#fff1da]"
+      <a routerLink="/about" (click)="toggleMenu($event)" class="text-[#fff1da]"
         >About Spira</a
       >
     </li>
     <li>
-      <a routerLink="/about" (click)="toggleMenu($event)" class="text-[#fff1da]"
+      <a routerLink="/artists" (click)="toggleMenu($event)" class="text-[#fff1da]"
         >Artists</a
       >
     </li>
     <li>
       <a
-        routerLink="/services"
+        routerLink="/releases"
         (click)="toggleMenu($event)"
         class="text-[#fff1da]"
         >Releases</a
@@ -185,7 +185,7 @@
     </li>
     <li>
       <a
-        routerLink="/pricing"
+        routerLink="/podcast"
         (click)="toggleMenu($event)"
         class="text-[#fff1da]"
         >Podcasts</a
@@ -193,7 +193,7 @@
     </li>
     <li>
       <a
-        routerLink="/contact"
+        routerLink="/showcases"
         (click)="toggleMenu($event)"
         class="text-[#fff1da]"
         >Showcases</a

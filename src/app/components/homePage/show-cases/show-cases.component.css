@@ -1,3 +1,6 @@
+
+
+
 .showcase-place::before {
   content: "";
   width: 5px;
@@ -8,3 +11,5 @@
   top: 10px;
   margin-left: -12px;
 }
+
+

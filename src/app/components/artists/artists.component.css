@@ -1,0 +1,7 @@
+.card-background {
+  background-color: #1e2b3d;
+}
+
+.card-background:hover {
+    background-color:rgb(61, 82, 111)
+}
