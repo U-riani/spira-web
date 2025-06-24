@@ -134,7 +134,6 @@ export class HeroArtComponent implements OnInit, OnDestroy {
     const mesh = new THREE.Mesh(geometry, mat);
 
     // No X or Z rotation
-    mesh.rotation.z = 100; // Rotate to face camera at 45 deg
     mesh.rotation.x = -Math.PI / 2; // Rotate to face camera at 45 deg
     mesh.rotation.z = -Math.PI / 2; // Rotate to face camera at 45 deg
 
