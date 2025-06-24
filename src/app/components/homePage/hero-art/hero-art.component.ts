@@ -7,8 +7,8 @@ import {
   ViewChild,
 } from '@angular/core';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { PLYLoader } from 'three/examples/jsm/loaders/PLYLoader';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { PLYLoader } from 'three/examples/jsm/loaders/PLYLoader.js';
 import GUI from 'lil-gui';
 
 @Component({
@@ -117,34 +117,33 @@ export class HeroArtComponent implements OnInit, OnDestroy {
     // Model
     const plyLoader = new PLYLoader();
     plyLoader.load(
-  'assets/hero/Lucy100k.ply',
-  (geometry: THREE.BufferGeometry) => {
-    geometry.scale(0.0024, 0.0024, 0.0024);
-    geometry.computeVertexNormals();
+      'assets/hero/Lucy100k.ply',
+      (geometry: THREE.BufferGeometry) => {
+        geometry.scale(0.0024, 0.0024, 0.0024);
+        geometry.computeVertexNormals();
 
-    geometry.computeBoundingBox();
-    const bbox = geometry.boundingBox!;
-    const center = new THREE.Vector3();
-    bbox.getCenter(center);
+        geometry.computeBoundingBox();
+        const bbox = geometry.boundingBox!;
+        const center = new THREE.Vector3();
+        bbox.getCenter(center);
 
-    // Center the geometry on X and Z, but let Y sit on the ground
-    geometry.translate(-center.x, -bbox.min.y, center.z);
+        // Center the geometry on X and Z, but let Y sit on the ground
+        geometry.translate(-center.x, -bbox.min.y, center.z);
 
-    const mat = new THREE.MeshLambertMaterial();
-    const mesh = new THREE.Mesh(geometry, mat);
+        const mat = new THREE.MeshLambertMaterial();
+        const mesh = new THREE.Mesh(geometry, mat);
 
-    // No X or Z rotation
-    mesh.rotation.x = -Math.PI / 2; // Rotate to face camera at 45 deg
-    mesh.rotation.z = -Math.PI / 2; // Rotate to face camera at 45 deg
+        // No X or Z rotation
+        mesh.rotation.x = -Math.PI / 2; // Rotate to face camera at 45 deg
+        mesh.rotation.z = -Math.PI / 2; // Rotate to face camera at 45 deg
 
-    mesh.position.set(0, 0, 0);
+        mesh.position.set(0, 0, 0);
 
-    mesh.castShadow = true;
-    mesh.receiveShadow = true;
-    this.scene.add(mesh);
-  }
-);
-
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+        this.scene.add(mesh);
+      }
+    );
 
     // GUI
     this.initGUI();
