@@ -1,12 +1,11 @@
 import { Component, AfterViewInit, HostListener } from '@angular/core';
 import * as THREE from 'three';
-import { HeroGalaxyComponent } from '../hero-galaxy/hero-galaxy.component';
 import { HeroArtComponent } from '../hero-art/hero-art.component';
 // Import additional loaders if needed
 
 @Component({
   selector: 'app-hero',
-  imports: [HeroGalaxyComponent, HeroArtComponent],
+  imports: [ HeroArtComponent],
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css']
 })
