@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { PiecesSliderComponent } from '../../pieces-slider/pieces-slider.component';
 import { PodcastComponent } from '../podcast/podcast.component';
 import { ReleasesComponent } from '../releases/releases.component';
-import { ArtistsComponent } from '../artists/artists.component';
 import { ShowCasesComponent } from '../show-cases/show-cases.component';
-import { PlayerComponent } from '../../reusableComponents/player/player.component';
+import { HeroComponent } from '../hero/hero.component';
 
 @Component({
   selector: 'app-home-layout',
@@ -12,9 +11,8 @@ import { PlayerComponent } from '../../reusableComponents/player/player.componen
     PiecesSliderComponent,
     PodcastComponent,
     ReleasesComponent,
-    ArtistsComponent,
     ShowCasesComponent,
-    PlayerComponent,
+    HeroComponent,
   ],
   templateUrl: './home-layout.component.html',
   styleUrl: './home-layout.component.css',

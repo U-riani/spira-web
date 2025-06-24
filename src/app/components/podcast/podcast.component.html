@@ -1,1 +1,31 @@
-<p>podcast works!</p>
+<div class="py-10">
+  <div class="flex ">
+    <div class=" page-title pt-2">
+      <h3 class="bg-yellow-500 py-5 pl-1 uppercase sticky top-[7rem]  text-4xl text-white">
+        PODCASTS
+      </h3>
+    </div>
+    <div class="csstransforms text-white pe-[40px] lg:pe-0 max-w-screen-xl mx-auto">
+      <div>
+        @for (item of podcastsArray; track $index) {
+        <div class="flex mb-5">
+          <div>
+            <div class="ps-2">
+              <div class="w-[150px] h-[150px] inline float-left mt-2 mr-3 p-2 bg-yellow-100">
+                <img
+                  class="w-full h-full object-cover"
+                  src="assets/img/2.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="break-words">
+                {{ item.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

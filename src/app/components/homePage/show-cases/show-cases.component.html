@@ -16,6 +16,9 @@
     </div>
     <div>
       <div>
+        <div class="flex items-center py-5 mb-5  max-w-lg mx-auto">
+          <h3 class="text-white">UPCOMING</h3>
+        </div>
         @for (item of showCaseArray; track $index) {
         <div class="flex items-center p-5 mb-5 bg-gray-800 max-w-lg mx-auto">
           <div class="hidden">
@@ -37,12 +40,56 @@
           </div>
           <div>
             <div class="ps-5">
-              <h5 class="text-white pb-1">{{item.name}}</h5>
+              <h5 class="text-white pb-1">{{ item.name }}</h5>
               <p class="text-gray-400 gap-2 pb-1">
-                <span class="pe-3">{{item.date}}</span>
-                <span class="showcase-place relative ps-2">{{item.place}}</span>
+                <span class="pe-3">{{ item.date }}</span>
+                <span class="showcase-place relative ps-2">{{
+                  item.place
+                }}</span>
               </p>
-              <p class="text-gray-500">Featuring: {{item.Featuring.join(', ')}} </p>
+              <p class="text-gray-500">
+                Featuring: {{ item.Featuring.join(", ") }}
+              </p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      <div>
+        <div class="flex items-center py-5 mb-5  max-w-lg mx-auto">
+          <h3 class="text-white">PREVIOUS</h3>
+        </div>
+        @for (item of showCaseArray; track $index) {
+        <div class="flex items-center p-5 mb-5 bg-gray-800 max-w-lg mx-auto">
+          <div class="hidden">
+            <img src="" alt="" />
+          </div>
+          <div>
+            <div class="w-[90px] h-[90px] bg-gray-700 p-4">
+              <svg
+                class="fill-current text-gray-500 hover:bg-opacity-50"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M96 32l0 32L48 64C21.5 64 0 85.5 0 112l0 48 448 0 0-48c0-26.5-21.5-48-48-48l-48 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32L160 64l0-32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192L0 192 0 464c0 26.5 21.5 48 48 48l352 0c26.5 0 48-21.5 48-48l0-272z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div>
+            <div class="ps-5">
+              <h5 class="text-white pb-1">{{ item.name }}</h5>
+              <p class="text-gray-400 gap-2 pb-1">
+                <span class="pe-3">{{ item.date }}</span>
+                <span class="showcase-place relative ps-2">{{
+                  item.place
+                }}</span>
+              </p>
+              <p class="text-gray-500">
+                Featuring: {{ item.Featuring.join(", ") }}
+              </p>
             </div>
           </div>
         </div>

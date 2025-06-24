@@ -1,1 +1,31 @@
-<p>showcases works!</p>
+<div class="py-10">
+  <div class="flex max-w-screen-xl mx-auto">
+    <div class="px-2 page-title">
+      <h3 class="uppercase sticky top-[6.5rem] pe-2 text-4xl text-white">
+        SHOWCASES
+      </h3>
+    </div>
+    <div class="csstransforms text-white pe-[56px]">
+      <div>
+        @for (item of showcasesArray; track $index) {
+        <div class="flex mb-5">
+          <div>
+            <div class="ps-2">
+              <div class="inline float-left mt-2 mr-3 p-2 bg-yellow-100">
+                <img
+                  class="max-w-[150px] aspect-[1/1] object-cover"
+                  src="assets/img/2.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="break-words">
+                {{ item.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.lil-gui {
+    display: none !important;
+}
+
+#stageElement {
+    display: none !important;
+    /* width: calc(100vw - 16px) !important; */
+}
+
+canvas {
+    height: calc(100% - 64px) !important;
+    width: 100% !important;
+}

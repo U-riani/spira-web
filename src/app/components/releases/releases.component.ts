@@ -4,8 +4,37 @@ import { Component } from '@angular/core';
   selector: 'app-releases',
   imports: [],
   templateUrl: './releases.component.html',
-  styleUrl: './releases.component.css'
+  styleUrl: './releases.component.css',
 })
 export class ReleasesComponent {
-
+  releasesArray = [
+    {
+      imgSrc: 'assets/img/1.jpg',
+      date: '2025-07-01',
+      title: 'Showcase 1',
+      description:
+        'Our inaugural label presentation took place on December 1st 2023 at "SINA". The event featured the co-founders - TSOTT, SOLARMENTAL, and BLDNFLD - alongside AMARES for our debut showcase.',
+    },
+    {
+      imgSrc: 'assets/img/2.jpg',
+      date: '2025-07-01',
+      title: 'Showcase 1',
+      description:
+        'Our inaugural label presentation took place on December 1st 2023 at "SINA". The event featured the co-founders - TSOTT, SOLARMENTAL, and BLDNFLD - alongside AMARES for our debut showcase.',
+    },
+    {
+      imgSrc: 'assets/img/3.jpg',
+      date: '2025-05-01',
+      title: 'Showcase 1',
+      description:
+        'Our inaugural label presentation took place on December 1st 2023 at "SINA". The event featured the co-founders - TSOTT, SOLARMENTAL, and BLDNFLD - alongside AMARES for our debut showcase.',
+    },
+    {
+      imgSrc: 'assets/img/4.jpg',
+      date: '2025-06-01',
+      title: 'Showcase 1',
+      description:
+        'Our inaugural label presentation took place on December 1st 2023 at "SINA". The event featured the co-founders - TSOTT, SOLARMENTAL, and BLDNFLD - alongside AMARES for our debut showcase.',
+    },
+  ];
 }
